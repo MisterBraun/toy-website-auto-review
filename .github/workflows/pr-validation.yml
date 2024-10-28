@@ -28,7 +28,7 @@ jobs:
       - uses: azure/cli@v1
         name: Create resource group
         with:
-          inlineScript:
+          inlineScript: |
             az group create \
               --name ${{ env.resourceGroupName }}
               --location ${{ env.resourceGroupLocation }}
