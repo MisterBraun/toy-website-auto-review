@@ -8,7 +8,7 @@ param location string = resourceGroup().location
 ])
 param environmentType string
 
-@description('A unique suffix to add to resource names that need to be globally unique.')
+@description('A unique Suffix to add to resource names that need to be globally unique.')
 @maxLength(13)
 param resourceNameSuffix string = uniqueString(resourceGroup().id)
 
@@ -17,7 +17,7 @@ var appServiceAppName = 'toy-website-${resourceNameSuffix}'
 var appServicePlanName = 'toy-website'
 var storageAccountName = 'mystorage${resourceNameSuffix}'
 
-var appServiceAppLinuxFrameworkVersion = 'node|14-lts'
+var appServiceAppLinuxFrameworkVersion = 'DOCKER|dockersamples/static-website:latest'
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
