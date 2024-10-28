@@ -30,7 +30,7 @@ jobs:
         with:
           inlineScript: |
             az group create \
-              --name ${{ env.resourceGroupName }}
+              --name ${{ env.resourceGroupName }} \
               --location ${{ env.resourceGroupLocation }}
       - uses: azure/arm-deploy@v1
         name: Deploy Bicep file
